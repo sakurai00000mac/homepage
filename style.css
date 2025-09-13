@@ -1,0 +1,125 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/*------------------------------------------------*/
+header {
+  position: fixed;     /* 画面上に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f8f8f8; /* 明るい背景 */
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  z-index: 1000;       /* 他の要素より前に表示 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 軽い影で浮き上がり感 */
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
+
+/*------------------------------------------------*/
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;          /* 黒よりのグレー */
+  font-weight: normal;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #007BFF;       /* ホバー時青 */
+}
+
+/*------------------------------------------------*/
+
+
+section {
+  text-align: center;      /* 左右中央 */
+  padding: 100px 20px 50px 20px; /* 上部余白はヘッダー分を確保 */
+  min-height: 80vh;        /* セクションの高さを画面に合わせる */
+  display: block;           /* デフォルトのブロック表示 */
+}
+
+section h1 {
+  font-size: 3rem;
+  margin-bottom: 5px; /* 下の余白を5pxに */
+}
+
+section h3 {
+  color: #333;      /* 黒よりグレー */
+  font-weight: normal; /* 太さを標準に */
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+section p.codeblock {
+  background-color: #fafafa;        /* 明るい背景色 */
+  border: 1px solid #ccc;           /* 柔らかい枠線 */
+  border-radius: 10px;              /* 角丸 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
+  padding: 30px 20px;               /* 上下余白30px、左右20px */
+  font-family: sans-serif;          /* 普通のフォント */
+  line-height: 1.6;
+  max-width: 600px;                 /* 最大幅でストレッチさせない */
+  margin: 20px auto;                /* 上下余白と中央寄せ */
+}
+
+/*------------------------------------------------*/
+
+.works-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* 横と縦の間隔 */
+  justify-items: center; /* 各アイテムを中央寄せ */
+}
+
+.work-item img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.work-item img:hover {
+  transform: scale(1.05);
+}
+
+.work-item p {
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/*------------------------------------------------*/
+
+.back-button {
+  text-align: left;
+  display: block;
+  text-decoration: none;
+  color: #333;           /* nav a と同じ色 */
+  font-weight: normal;
+  transition: color 0.2s;
+  background-color: transparent; /* 背景透明 */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.back-button:hover {
+  color: #007BFF;        /* ホバー色 */
+}
+
+/*------------------------------------------------*/
