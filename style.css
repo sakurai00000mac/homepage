@@ -123,3 +123,40 @@ section p.codeblock {
 }
 
 /*------------------------------------------------*/
+.news-list {
+  background-color: #fafafa;        /* 明るい背景色 */
+  border: 1px solid #ccc;           /* 枠線 */
+  border-radius: 10px;              /* 角丸 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
+  padding: 20px;                    /* 内側余白 */
+  max-width: 600px;                 /* 最大幅600px */
+  margin: 20px auto;                /* 中央寄せ */
+  max-height: 500px;                /* 5件分くらいの高さ */
+  overflow-y: auto;                 /* スクロール可能 */
+  line-height: 1.6;
+}
+
+.news-item {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+  border-bottom: none; /* 最後は区切り線なし */
+}
+
+.news-title {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.news-content {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 0.95em;
+}
+
+/*------------------------------------------------*/
