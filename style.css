@@ -28,14 +28,17 @@ footer {
 /*------------------------------------------------*/
 nav {
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;          /* 黒よりのグレー */
-  font-weight: normal;
-  transition: color 0.2s;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;     /* 少し大きめの文字 */
+  padding: 0.5rem 0.8rem; /* 内側の余白を追加して押しやすく */
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 5px;   /* ボタンっぽさを出すなら角丸 */
 }
 
 nav a:hover {
@@ -64,6 +67,16 @@ section h3 {
   margin-bottom: 50px;
 }
 
+section img {
+  display: block;                   /* インライン要素からブロックに */
+  max-width: 600px;                 /* 横幅は最大600pxまで */
+  width: 100%;                      /* 親幅に合わせて縮小 */
+  height: auto;                     /* 縦横比を維持 */
+  margin: 20px auto;                /* 上下余白＋中央寄せ */
+  border-radius: 10px;              /* 角丸（任意） */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影（任意） */
+}
+
 section p.codeblock {
   background-color: #fafafa;        /* 明るい背景色 */
   border: 1px solid #ccc;           /* 柔らかい枠線 */
@@ -76,6 +89,18 @@ section p.codeblock {
   margin: 20px auto;                /* 上下余白と中央寄せ */
 }
 
+section p.codeblockleft {
+  background-color: #fafafa;        /* 明るい背景色 */
+  border: 1px solid #ccc;           /* 柔らかい枠線 */
+  border-radius: 10px;              /* 角丸 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
+  padding: 30px 20px;               /* 上下余白30px、左右20px */
+  font-family: sans-serif;          /* 普通のフォント */
+  line-height: 1.6;
+  max-width: 600px;                 /* 最大幅でストレッチさせない */
+  margin: 20px auto;                /* 上下余白と中央寄せ */
+  text-align: left;
+}
 /*------------------------------------------------*/
 
 .works-container {
@@ -86,9 +111,10 @@ section p.codeblock {
 }
 
 .work-item img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
+  width: 320px;         /* 横幅を固定 */
+  height: 180px;        /* 高さを固定 */
+  object-fit: cover;    /* 枠に収める＆比率維持で中央トリミング */
+  object-position: center; /* 中央部分を表示 */
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s;
