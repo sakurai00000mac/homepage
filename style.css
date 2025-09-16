@@ -1,221 +1,161 @@
+/* --- Base & Typography --- */
+:root {
+    /* Dark Theme Variables */
+    --background-dark: #1a1d24;
+    --content-bg-dark: #252932;
+    --border-color-dark: #3a3f4b;
+    --text-light: #e0e0e0;
+
+    /* Light Theme Variables */
+    --background-light: #f4f7f9;
+    --content-bg-light: #ffffff;
+    --border-color-light: #e1e5e8;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+
+    /* Accent Colors */
+    --accent-primary: #007BFF;
+    --accent-hover: #0056b3;
+}
+
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    background-color: var(--background-light);
+    color: var(--text-dark);
 }
-
-/*------------------------------------------------*/
-header {
-  position: fixed;     /* 画面上に固定 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #f8f8f8; /* 明るい背景 */
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  z-index: 1000;       /* 他の要素より前に表示 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 軽い影で浮き上がり感 */
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #eee;
-}
-
-/*------------------------------------------------*/
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 1.1rem;     /* 少し大きめの文字 */
-  padding: 0.5rem 0.8rem; /* 内側の余白を追加して押しやすく */
-  transition: color 0.2s, background-color 0.2s;
-  border-radius: 5px;   /* ボタンっぽさを出すなら角丸 */
-}
-
-nav a:hover {
-  color: #007BFF;       /* ホバー時青 */
-}
-
-/* スマホ用デザイン */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* ボタンを表示 */
-  }
-
-  .nav-links {
-    display: none; /* 初期は非表示 */
-    flex-direction: column; /* 縦並び */
-    gap: 15px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.active {
-    display: flex; /* ボタン押下で表示 */
-  }
-}
-
-/*------------------------------------------------*/
-
 
 section {
-  text-align: center;      /* 左右中央 */
-  padding: 100px 20px 50px 20px; /* 上部余白はヘッダー分を確保 */
-  min-height: 80vh;        /* セクションの高さを画面に合わせる */
-  display: block;           /* デフォルトのブロック表示 */
+    text-align: center;
+    padding: 120px 40px 80px 40px;
+    min-height: 80vh;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
 }
 
 section h1 {
-  font-size: 3rem;
-  margin-bottom: 5px; /* 下の余白を5pxに */
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--accent-primary);
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 section h3 {
-  color: #333;      /* 黒よりグレー */
-  font-weight: normal; /* 太さを標準に */
-  margin-top: 0;
-  margin-bottom: 50px;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 60px;
 }
 
-section img {
-  display: block;                   /* インライン要素からブロックに */
-  max-width: 600px;                 /* 横幅は最大600pxまで */
-  width: 100%;                      /* 親幅に合わせて縮小 */
-  height: auto;                     /* 縦横比を維持 */
-  margin: 20px auto;                /* 上下余白＋中央寄せ */
-  border-radius: 10px;              /* 角丸（任意） */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影（任意） */
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
-section p.codeblock {
-  background-color: #fafafa;        /* 明るい背景色 */
-  border: 1px solid #ccc;           /* 柔らかい枠線 */
-  border-radius: 10px;              /* 角丸 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
-  padding: 30px 20px;               /* 上下余白30px、左右20px */
-  font-family: sans-serif;          /* 普通のフォント */
-  line-height: 1.6;
-  max-width: 600px;                 /* 最大幅でストレッチさせない */
-  margin: 20px auto;                /* 上下余白と中央寄せ */
+a:hover {
+    color: var(--accent-hover);
 }
 
-section p.codeblockleft {
-  background-color: #fafafa;        /* 明るい背景色 */
-  border: 1px solid #ccc;           /* 柔らかい枠線 */
-  border-radius: 10px;              /* 角丸 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
-  padding: 30px 20px;               /* 上下余白30px、左右20px */
-  font-family: sans-serif;          /* 普通のフォント */
-  line-height: 1.6;
-  max-width: 600px;                 /* 最大幅でストレッチさせない */
-  margin: 20px auto;                /* 上下余白と中央寄せ */
-  text-align: left;
-}
-/*------------------------------------------------*/
-
-.works-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px; /* 横と縦の間隔 */
-  justify-items: center; /* 各アイテムを中央寄せ */
+/* --- Header & Footer (Dark Theme) --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 29, 36, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color-dark);
+    font-family: sans-serif; /* Revert header font */
 }
 
-.work-item img {
-  width: 320px;         /* 横幅を固定 */
-  height: 180px;        /* 高さを固定 */
-  object-fit: cover;    /* 枠に収める＆比率維持で中央トリミング */
-  object-position: center; /* 中央部分を表示 */
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+header nav a {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.work-item img:hover {
-  transform: scale(1.05);
+header nav a:hover {
+    color: var(--accent-primary);
+    transform: translateY(-2px);
 }
 
-.work-item p {
-  margin-top: 10px;
-  color: #333;
-  text-align: center;
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--background-dark);
+    color: var(--text-muted);
+    margin-top: 4rem;
 }
 
-/*------------------------------------------------*/
-
-.back-button {
-  text-align: left;
-  display: block;
-  text-decoration: none;
-  color: #333;           /* nav a と同じ色 */
-  font-weight: normal;
-  transition: color 0.2s;
-  background-color: transparent; /* 背景透明 */
-  padding: 5px 10px;
-  border-radius: 5px;
+/* --- Content Blocks (Light Theme) --- */
+.codeblock, .codeblockleft, .news-list {
+    background-color: var(--content-bg-light);
+    border: 1px solid var(--border-color-light);
+    border-radius: 10px;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.back-button:hover {
-  color: #007BFF;        /* ホバー色 */
+.codeblock {
+    text-align: center;
 }
 
-/*------------------------------------------------*/
-.news-list {
-  background-color: #fafafa;        /* 明るい背景色 */
-  border: 1px solid #ccc;           /* 枠線 */
-  border-radius: 10px;              /* 角丸 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ふんわり影 */
-  padding: 20px;                    /* 内側余白 */
-  max-width: 600px;                 /* 最大幅600px */
-  margin: 20px auto;                /* 中央寄せ */
-  max-height: 500px;                /* 5件分くらいの高さ */
-  overflow-y: auto;                 /* スクロール可能 */
-  line-height: 1.6;
+.codeblockleft, .news-list {
+    text-align: left;
 }
 
 .news-item {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color-light);
 }
 
 .news-item:last-child {
-  border-bottom: none; /* 最後は区切り線なし */
+    border-bottom: none;
 }
 
 .news-title {
-  margin: 0;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #333;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--text-dark);
 }
 
 .news-content {
-  margin: 5px 0 0;
-  color: #555;
-  font-size: 0.95em;
+    margin: 5px 0 0;
+    color: var(--text-muted);
 }
 
-/*------------------------------------------------*/
-
-/* Carousel Styles */
+/* --- Carousel (Light Theme) --- */
 .carousel {
     position: relative;
     max-width: 800px;
-    margin: 0 auto 2rem; /* Adjusted top margin */
+    margin: 0 auto 2rem;
 }
 
 .carousel__track-container {
@@ -229,24 +169,23 @@ section p.codeblockleft {
     margin: 0;
     list-style: none;
     position: relative;
-    /* Set height based on children */
-    min-height: 300px; /* Example min-height */
+    min-height: 300px;
 }
 
 .carousel__slide {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 60%; /* Main slide width */
-    left: 20%; /* Centered */
+    width: 60%;
+    left: 20%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
     transform: scale(0.7);
-    opacity: 0; /* Hidden by default */
-    z-index: -1; /* Keep it out of the way */
+    opacity: 0;
+    z-index: -1;
 }
 
 .carousel__slide.current-slide {
@@ -270,28 +209,32 @@ section p.codeblockleft {
 .carousel__slide img {
     display: block;
     width: 100%;
-    max-height: 350px; /* Control image height */
+    max-height: 350px;
     object-fit: contain;
+    border-radius: 10px;
+    background: var(--background-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .carousel__button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-    border: none;
-    width: 40px;
-    height: 40px;
+    border: 1px solid var(--border-color-light);
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--text-dark);
     z-index: 2;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .carousel__button:hover {
-    background: white;
+    background: var(--content-bg-light);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carousel__button--left {
@@ -302,25 +245,25 @@ section p.codeblockleft {
     right: 10px;
 }
 
-/* Navigation Dots */
 .carousel__nav {
     display: flex;
     justify-content: center;
-    padding-top: 5px; /* Use padding-top to add space */
+    padding-top: 15px;
 }
 
 .carousel__indicator {
     border: 0;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    width: 12px;
+    height: 12px;
+    background: #ccc;
     margin: 0 8px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .carousel__indicator.current-slide {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--accent-primary);
 }
 
 /* Special cases for slide counts */
@@ -336,3 +279,84 @@ section p.codeblockleft {
     z-index: -1;
 }
 
+/* --- Works Page Grid --- */
+.works-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.work-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.work-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.work-item img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.work-item p {
+  margin-top: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* --- Utility Classes --- */
+.button-primary {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.button-primary:hover {
+    background-color: var(--accent-hover);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Back button */
+.back-button {
+  text-align: left;
+  display: block;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  color: var(--accent-primary);
+}
+
+/* --- Project Page Specifics --- */
+section > img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* 最大の高さを指定 */
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.shidayo-link {
+    display: block;
+    text-align: center;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
