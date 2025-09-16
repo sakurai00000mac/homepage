@@ -210,3 +210,129 @@ section p.codeblockleft {
 }
 
 /*------------------------------------------------*/
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 2rem; /* Adjusted top margin */
+}
+
+.carousel__track-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    /* Set height based on children */
+    min-height: 300px; /* Example min-height */
+}
+
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60%; /* Main slide width */
+    left: 20%; /* Centered */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    transform: scale(0.7);
+    opacity: 0; /* Hidden by default */
+    z-index: -1; /* Keep it out of the way */
+}
+
+.carousel__slide.current-slide {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel__slide.prev-slide {
+    transform: scale(0.8) translateX(-80%);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.carousel__slide.next-slide {
+    transform: scale(0.8) translateX(80%);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.carousel__slide img {
+    display: block;
+    width: 100%;
+    max-height: 350px; /* Control image height */
+    object-fit: contain;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carousel__button:hover {
+    background: white;
+}
+
+.carousel__button--left {
+    left: 10px;
+}
+
+.carousel__button--right {
+    right: 10px;
+}
+
+/* Navigation Dots */
+.carousel__nav {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px; /* Use padding-top to add space */
+}
+
+.carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.carousel__indicator.current-slide {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Special cases for slide counts */
+.carousel.single-slide .carousel__button,
+.carousel.single-slide .carousel__nav {
+    display: none;
+}
+
+.carousel.two-slides .carousel__slide.prev-slide,
+.carousel.two-slides .carousel__slide.next-slide {
+    opacity: 0;
+    transform: scale(0.7);
+    z-index: -1;
+}
+
