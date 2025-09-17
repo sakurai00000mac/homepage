@@ -386,7 +386,7 @@ section > img {
 
     header nav a {
         padding: 0.5rem;
-        font-size: 1.1rem; /* Increased font size */
+        font-size: 1.0rem; /* Adjusted font size */
     }
 
     section > img {
@@ -448,7 +448,18 @@ section > img {
         padding-top: 10px; /* Reduce space */
     }
 
-    
+    .carousel__indicator {
+        width: 12px !important;
+        height: 12px !important;
+        min-width: 12px !important;
+        min-height: 12px !important;
+        max-width: 12px !important;
+        max-height: 12px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        aspect-ratio: 1 / 1 !important;
+        flex-shrink: 0 !important; /* Prevent shrinking in flex container */
+    }
 
     /* --- Works Grid Responsive --- */
     .works-container {
