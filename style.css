@@ -398,7 +398,7 @@ section > img {
     }
 
     section h2 {
-        font-size: 2rem;
+        font-size: 1.7rem; /* Reduced font size for mobile */
     }
 
     .codeblock, .codeblockleft, .news-list {
