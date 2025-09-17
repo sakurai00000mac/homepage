@@ -386,7 +386,7 @@ section > img {
 
     header nav a {
         padding: 0.5rem;
-        font-size: 0.9rem;
+        font-size: 1.1rem; /* Increased font size */
     }
 
     section > img {
@@ -422,7 +422,9 @@ section > img {
 
     .carousel__button {
         width: 40px;
-        height: 40px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
         font-size: 1.3rem;
         background: rgba(0, 0, 0, 0.3);
         color: white;
