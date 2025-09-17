@@ -451,6 +451,7 @@ section > img {
     .carousel__indicator {
         width: 10px;
         height: 10px;
+        aspect-ratio: 1 / 1; /* Force square shape */
     }
 
     /* --- Works Grid Responsive --- */
