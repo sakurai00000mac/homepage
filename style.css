@@ -380,7 +380,7 @@ section > img {
 
     header nav {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between; /* Use space-between */
         width: 100%;
     }
 
@@ -448,11 +448,7 @@ section > img {
         padding-top: 10px; /* Reduce space */
     }
 
-    .carousel__indicator {
-        width: 10px;
-        height: 10px;
-        aspect-ratio: 1 / 1; /* Force square shape */
-    }
+    
 
     /* --- Works Grid Responsive --- */
     .works-container {
