@@ -360,3 +360,100 @@ section > img {
     margin-top: -1rem;
     margin-bottom: 2rem;
 }
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 15px 60px 15px; /* Reduced horizontal padding */
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    header nav a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    section > img {
+        margin: 1rem 0;
+    }
+
+    section h1 {
+        font-size: 2.5rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .codeblock, .codeblockleft, .news-list {
+        padding: 20px;
+    }
+
+    /* --- Carousel Responsive --- */
+    .carousel {
+        max-width: 100%; /* Allow carousel to use full width */
+    }
+
+    .carousel__slide {
+        width: 100%; /* Slide takes full width */
+        left: 0;
+    }
+
+    .carousel__slide.prev-slide,
+    .carousel__slide.next-slide {
+       display: none; /* Hide side slides on mobile for clarity */
+    }
+
+    .carousel__button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+    }
+
+    .carousel__button:hover {
+        background: rgba(0, 0, 0, 0.5);
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel__button--left {
+        left: 10px; /* Position inside the container */
+    }
+
+    .carousel__button--right {
+        right: 10px; /* Position inside the container */
+    }
+    
+    .carousel__nav {
+        padding-top: 10px; /* Reduce space */
+    }
+
+    .carousel__indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* --- Works Grid Responsive --- */
+    .works-container {
+        display: flex; /* Switch to flexbox */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        gap: 20px;
+    }
+
+    .work-item {
+        width: 100%;
+        max-width: 350px; /* Control max width */
+    }
+}
